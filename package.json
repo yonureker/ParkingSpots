@@ -1,0 +1,16 @@
+{
+  "name": "parkingSpots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "city.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "onur eker",
+  "license": "ISC",
+  "dependencies": {
+    "geohash-distance": "^1.0.2",
+    "ngeohash": "^0.6.3",
+    "proximityhash": "^2.1.2"
+  }
+}
