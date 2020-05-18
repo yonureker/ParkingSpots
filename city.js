@@ -17,7 +17,7 @@ const geohashDistance = require("geohash-distance"); // to calculate distance be
 
 // import sample data set.
 // 100k points in '9q8' boundary box.
-const sf = require("./data.js");
+const sf = require("./data2.js");
 
 class City {
   /* The constructor takes in a list of data points representing the city, 
@@ -34,7 +34,7 @@ class City {
   */
 
   constructor(data) {
-    this.hashPrecision = 7; // this is the length of the hash we will group all data points
+    this.hashPrecision = 1; // this is the length of the hash we will group all data points
     this.data = {};
 
     // check each datapoint and group them by their 7-level geohash substring
@@ -141,8 +141,8 @@ class City {
     const options = {
       latitude: ngeohash.decode(address).latitude,
       longitude: ngeohash.decode(address).longitude,
-      radius: 600, // in meters
-      precision: 7,
+      radius: 500, // in meters
+      precision: this.hashPrecision,
       georaptorFlag: true,
     };
 
@@ -153,7 +153,7 @@ class City {
 }
 
 // initialize city
-let sanFrancisco = new City(sf.data);
+let sanFrancisco = new City(sf.data2);
 
 // searching a geohash
 sanFrancisco.search("9q8ytwheyxsh"); // Twin Peaks
